@@ -2,11 +2,18 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@9.12.3",
+  "engines": {
+    "node": ">=18 <23"
+  },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "audit": "pnpm audit",
+    "ci:install": "pnpm install --frozen-lockfile"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
